@@ -1,0 +1,63 @@
+.hero{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero h1{
+    font-size: 4rem;
+    width: 70%;
+    margin-top: 2rem;
+}
+.hero h1 span{
+    background: linear-gradient(270deg , var(--orange), var(--red));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero p{
+    font-size: 1.5rem;
+    width: 60%;
+}
+.buttons{
+    margin-top: 2rem;
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.connect{
+    user-select: none;
+    background: linear-gradient(220deg,var(--red) , var(--orange) 100%);
+    padding: 1rem 1.5rem;
+    border-radius: 2.5rem;
+    cursor: pointer;
+    color: white;
+    transition: all 0.4s;
+}
+.connect:hover{
+    transform: translateX(-1rem);
+}
+.connect:active{
+    transform: translateX(0);
+}
+
+.resume{
+    user-select: none;
+    padding: 1rem 1.5rem;
+    border-radius: 2.5rem;
+    cursor: pointer;
+    color: white;
+    transition: all 0.4s;
+    border: 2px solid white;
+}
+.resume:hover{
+    transform: translateX(1rem);
+}
+.resume:active{
+    transform: translateX(0);
+}
