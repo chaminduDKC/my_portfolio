@@ -1,0 +1,89 @@
+.services{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    user-select: none;
+    margin: 100px 180px;
+    margin-bottom: 20px;
+    height: 100vh;
+}
+.title{
+    font-size: 3rem;
+    text-align: center;
+    position: relative;
+    margin-bottom: 2rem;
+}
+.title img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -11;
+}
+.cards{
+    display: grid;
+    /*grid-template-columns: repeat(3, 1fr); !* cleaner syntax *!*/
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1rem;
+    text-align: left;
+    position: relative;
+    border: 1px solid white;
+    border-radius: 10px;
+    height: 300px;
+    overflow: hidden; /* Important to hide overflow from ::before */
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+    z-index: 0;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0%; /* Start from top */
+    width: 100%;
+    background: linear-gradient(220deg, var(--red), var(--orange));
+    z-index: -1; /* Push behind content */
+    transition: height 0.4s ease-in-out;
+    border-radius: inherit;
+}
+
+.card:hover {
+    border: 1px solid transparent;
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+
+
+.card:hover::before {
+    height: 64%; /* Animate the gradient fill */
+}
+.card h1{
+    font-size: 2.1rem;
+    background: linear-gradient(300deg , var(--orange), var(--red));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.card .description,
+.card .no{
+    font-size: 1.5rem;
+}
+.card .techs{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
