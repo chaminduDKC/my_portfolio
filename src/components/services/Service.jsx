@@ -5,7 +5,7 @@ import services_data from "../../services.js";
 
 const Service = () => {
     return (
-        <div className="services">
+        <div id="Services"  className="services">
             <div className="title">
                 <h1>Services</h1>
                 <img src={ThemePattern} alt="title-image"/>

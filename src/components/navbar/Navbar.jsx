@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './navbar.css'
 import logo from '../../assets/logo.svg'
 import toggleOpen from '../../assets/menu_open.svg'
-import toggleClose from '../../assets/menu_close.svg'
+import AnchorLink from "react-anchor-link-smooth-scroll/lib/anchor-link.js";
 
 const Navbar = () => {
     const [activeTab, setActiveTab] = useState('Home');
@@ -16,7 +16,8 @@ const Navbar = () => {
         <div className="navbar">
             <img src={logo} alt="logo"/>
             <ul className="nav-menu">
-                {['Home', 'Services', 'Portfolio', 'About Me'].map((tab) => (
+                {['Home', 'About Me', 'Services','Portfolio'].map((tab) => (
+                    <AnchorLink href={`#${tab}`}>
                     <li
                         key={tab}
                         className={activeTab === tab ? 'active' : ''}
@@ -24,14 +25,20 @@ const Navbar = () => {
                     >
                         {tab}
                     </li>
+                    </AnchorLink>
                 ))}
             </ul>
             <div >
                 <img onClick={() => setOpen(!open)} className="toggle" src={open && toggleOpen} alt=""/>
-                <div className="nav-connect">
-                    Connect With Me
-                </div>
-            </div>
+
+                <AnchorLink href="#contact">
+                    <div className="nav-connect">
+                        Connect With Me
+                    </div>
+                </AnchorLink>
+
+
+        </div>
 
         </div>
     );
